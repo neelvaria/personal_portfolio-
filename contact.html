@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="assets/css/main.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Varia Neel</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<section class="contact-section">
+    <div class="contact-container">
+        <div class="contact-details">
+            <div class="contact-header">
+                <img src="assets/img/Male_Character_Pointing_On_Something-transformed.png" alt="Contact Icon" class="contact-icon">
+                <h2>Contact Details</h2>
+            </div>
+            <p><strong>Email:</strong> <a href="mailto:neelvaria08gmail.com">neelvaria08gmail.com</a></p>
+            <p><strong>Location:</strong> Jamnagar, Gujarat</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.3322180503164!2d70.07065267534142!3d22.46938747956539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39576bd487d0e143%3A0xc3d807bb9b4357b4!2sVaria%20Traders!5e1!3m2!1sen!2sin!4v1725352253166!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/neelvaria" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/neelvaria/" target="_blank">LinkedIn</a>
+                <!-- <a href="https://x.com/VariaNeel" target="_blank">Twitter</a> -->
+                <a href="https://www.instagram.com/neelvariaa/" target="_blank">Instagram</a>
+                <!-- Add more social links as needed -->
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Me</h2>
+            <form action="your-server-endpoint" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="number">Contact:</label>
+                    <input type="text" id="number" name="number" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

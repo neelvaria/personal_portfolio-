@@ -1,0 +1,1498 @@
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    /* margin: 0;
+    padding: 0; */
+}
+
+body {
+    margin: 0;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    background-color: #1E1E1E;
+    color: #FFFFFF; 
+    overflow-x: hidden;
+    /* align-items: center; */
+}
+
+header {
+    background-color: #000000; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #FFFFFF;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 1300px; */
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* width: 100%; */
+}
+
+.logo {
+    flex: 0 1 auto;
+    margin: 0;
+}
+
+
+.logo h1 {
+    margin: auto 0;
+    padding-left: 0;
+    color: #FFFFFF; 
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns the navbar to the right */
+    align-items: center;
+    flex-grow: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #B1B1B1; 
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFFFFF; 
+    transition: width 0.3s, left 0.3s;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #FFFFFF; 
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: #FFFFFF; 
+    height: 3px;
+    width: 30px;
+    margin: 3px 0;
+    border-radius: 3px;
+}
+
+main {
+    padding: 1.5rem;
+}
+
+
+/* Hero Section CSS */
+.hero {
+    background-color: #000000; 
+    color: #FFFFFF;
+    text-align: center;
+    padding: .5rem 4rem;
+    margin: 0 auto 2rem;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden; 
+    /* margin: 0 auto; */
+}
+
+.hero-content {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 1rem;   
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    white-space: normal; 
+    overflow: hidden; 
+}
+
+.typewriter-container {
+    display: inline-block;
+    white-space: nowrap; 
+    overflow: hidden; 
+    animation: blink 0.75s step-end infinite;
+    vertical-align: middle;
+}
+
+.typewriter-text {
+    display: inline-block;
+    white-space: nowrap; 
+    overflow: hidden; 
+    border-right: 2px solid #FFFFFF; 
+    animation: blink 0.75s step-end infinite;
+    vertical-align: middle;
+}
+
+/* Typewriting Animation */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #FFFFFF; 
+    }
+}
+
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    text-decoration: none;
+    color: #000000; 
+    background-color: #FFFFFF; 
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #000000; 
+    color: #FFFFFF; 
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Space between photo and profile info */
+    flex-direction: row; /* Ensure photo and info are in a row */
+    text-align: left; /* Align text to the left */
+    max-width: 100%; /* Prevent overflow */
+}
+
+.profile-photo-container {
+    flex-shrink: 0; 
+}
+
+.profile-photo {
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #46C016; 
+    box-shadow: 0 0 15px rgba(0, 255, 1, 0.7); 
+}
+
+.profile-info {
+    max-width: calc(100% - 220px); /* Adjust width to fit within container, considering photo width */
+}
+
+.profile-info h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #FFFFFF; /* White text */
+}
+
+.profile-info p {
+    font-size: 1rem;
+    color: #b2b2b2; /* Light grey for the text */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    text-decoration: none;
+    color: #000000; /* Black text */
+    background-color: #FFFFFF; /* White background */
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #FFFFFF; /* White text on hover */
+}
+
+/* Ensure no overflow and proper spacing */
+.section-content {
+    padding: 1rem; /* Add padding to prevent content from touching edges */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Skills */
+/* Skills Section CSS */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    gap: 2rem;
+    justify-content: center; /* Centers the items horizontally */
+    padding: 1rem; /* Add some padding around the container */
+    margin: 0 auto;
+}
+
+.skill {
+    background-color: #333333; /* Dark grey background */
+    padding: 1rem;
+    border-radius: 10px;
+    width: calc(25% - 2rem); /* Adjust width to fit four items in a row with space for gap */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    margin-bottom: 2rem; /* Ensure spacing between rows */
+}
+
+.skill h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00ff01; /* Green color for headings */
+}
+
+.skill ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill li {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between logo and skill name */
+    font-size: 1.2rem;
+    color: #B1B1B1; /* Light grey text */
+    margin-bottom: 0.5rem;
+}
+
+
+
+.skill-logo {
+    width: 20px; /* Adjust logo size */
+    height: auto;
+    vertical-align: middle; /* Align logo with text */
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #000000; /* Black background for footer */
+    color: #B1B1B1; /* Light grey text */
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid #FFFFFF; /* White border */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* About Section CSS */
+.about-section {
+    background-color: #1E1E1E; /* Dark background */
+    color: #b2b2b2; /* Light text color */
+    padding: 0rem 0rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1250px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* .about-profile-photo {
+    flex: 1;
+    text-align: center;
+}
+
+.about-profile-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #46C016; 
+    box-shadow: 0 0 15px rgba(0, 255, 1, 0.7);
+} */
+
+.about-profile-info {
+    flex: 5;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.about-profile-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00ff01;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+
+.cta-button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #ECDFCC;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+}
+
+/* Main Container for Centering */
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 2rem; /* Padding around the container */
+    background-color: #1E1E1E; /* Dark background for section */
+}
+
+/* Experience and Education Section */
+.experience-education-section {
+    background-color: #1E1E1E; /* Dark background */
+    color: #ECDFCC; /* Light text color */
+    padding: 0.5rem 1.5rem; /* Ample padding for spacious layout */
+    border-radius: 10px;
+    max-width: 1400px; /* Control container width */
+    width: 100%; /* Full width within the max-width */
+    text-align: center; /* Center text */
+}
+
+/* Timeline Container */
+.timeline-container {
+    display: flex;
+    justify-content: space-between; /* Space out the two sections */
+    gap: 2rem; /* Space between the two timelines */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+/* Individual Timelines */
+.education-timeline, .experience-timeline {
+    flex: 1;
+    min-width: 300px; /* Minimum width for each section */
+    text-align: left; /* Align text to the left for readability */
+    padding: 0 2rem; /* Adjust padding without the line */
+}
+
+/* Section Headings */
+.education-timeline h2, .experience-timeline h2 {
+    font-size: 2rem; /* Font size for headings */
+    color: #00ff01; /* Heading color */
+    margin-bottom: 1rem; /* Space below the heading */
+    border-bottom: 2px solid #ECDFCC; /* Underline effect */
+    padding-bottom: 0.5rem; /* Padding below the heading */
+}
+
+/* Timeline Items */
+.timeline-items, .exp-timeline-items {
+    position: relative;
+    padding-left: 0; /* Remove left padding as no line is present */
+}
+
+/* Timeline Item */
+.timeline-item, .exp-timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 0; /* Remove left padding as no line is present */
+}
+
+/* Title and Content */
+.timeline-item h3, .exp-timeline-item h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    color: #FFFFFF;
+}
+
+.timeline-item p, .exp-timeline-item p {
+    font-size: 1rem; /* Default font size */
+    color: #B1B1B1; /* Light grey color for the text */
+    margin: 0.2rem 0; /* Adjust spacing */
+}
+
+.timeline-item p:last-of-type, .exp-timeline-item p:last-of-type {
+    font-size: 1.1rem; 
+    color: #ECDFCC; 
+    font-weight: 700; /* Bold text for emphasis */
+    letter-spacing: 0.5px; /* Add some letter spacing */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for the date */
+    padding: 0.2rem 0.5rem; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensures padding is respected */
+}
+
+/* Specific Styling for Experience Section */
+.exp-timeline-item p {
+    font-size: 1rem; /* Default font size for all p tags */
+    color: #B1B1B1; /* Light grey color for text */
+    margin: 0.5rem 0; /* Spacing between paragraphs */
+    line-height: 1.5; /* Improve readability */
+}
+
+.exp-timeline-item p.exp-company {
+    font-size: 1.1rem; /* Slightly larger font size for company names */
+    color: #FFFFFF; /* White color for company names */
+    font-weight: 600; /* Semi-bold for emphasis */
+}
+
+.exp-timeline-item p.exp-description {
+    font-size: 1rem; /* Keep the font size standard for job descriptions */
+    color: #D3D3D3; /* A lighter grey for job descriptions */
+    font-style: italic; /* Italicize to distinguish from other text */
+}
+
+.exp-timeline-item p.exp-dates {
+    font-size: 1.1rem; /* Slightly larger font size for dates */
+    color: #00FF7F; /* Use a green color to make the date stand out */
+    font-weight: 700; /* Bold text for emphasis */
+    letter-spacing: 0.5px; /* Add some letter spacing */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for the date */
+    padding: 0.2rem 0.5rem; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Ensures padding is respected */
+}
+
+
+.certification-section {
+    padding: 3rem 1.5rem;
+    background-color: #1E1E1E; /* Dark background to match your theme */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.certification-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-columns: repeat(5, 1fr); */
+    gap: 1rem;
+    justify-items: center;
+}
+
+.certification-item {
+    background-color: #2A2A2A;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 255, 127,0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    text-align: center;
+}
+
+.certification-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.certification-item h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.certification-item p {
+    font-size: 1rem;
+    color: #D3D3D3;
+    margin: 0.2rem 0;
+}
+
+.certification-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.certification-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer CSS */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000000;
+    color: #B1B1B1;
+}
+
+.projects-section {
+    padding: 3rem 1.5rem;
+    background-color: #1E1E1E; /* Dark background to match your theme */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.project-item {
+    background-color: #2A2A2A;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 255, 127, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 1400px;
+    text-align: center;
+}
+
+.project-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem; /* Space between image and tech stack */
+    margin-bottom: 1rem;
+}
+
+.project-image {
+    text-align: left;
+}
+
+.project-image img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+}
+
+.project-image video {
+    max-width: 100%;
+    max-height: 300px; /* Adjust as needed */
+    border-radius: 10px;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+
+.tech-stack {
+    flex: 1;
+    text-align: left;
+    color: #00FF7F; /* Green color for tech stack */
+    font-size: 20px;
+}
+
+.project-description {
+    text-align: left;
+}
+
+.tech-stack h3, .project-description h3 {
+    font-style: normal;
+    color: #ECDFCC;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.tech-stack span{
+    color: white;
+}
+
+.project-description span{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 3px;
+}
+
+.project-description p {
+    font-size: 1.2rem;
+    color: #D3D3D3;
+    margin: 0.2rem 0;
+}
+
+.project-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: left;
+    gap: 0.6rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem; /* Smaller padding for a compact size */
+    border-radius: 20px; /* Slightly less rounded for smaller size */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    transition: all 0.3s ease;
+    margin-right: 0.6rem; /* Reduced margin between buttons */
+    text-align: center;
+    min-width: 100px; /* Smaller minimum width */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Adjusted shadow for smaller size */
+    border: 2px solid transparent;
+    align-self: flex-start;
+}
+
+/* GitHub button styling */
+.github-btn {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #333;
+}
+
+.github-btn:hover {
+    background-color: #fff;
+    color: #333;
+    border-color: #333;
+    transform: translateY(-2px); /* Slightly smaller hover lift */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adjusted shadow on hover */
+}
+
+/* Live demo button styling */
+.live-demo-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid #007bff;
+}
+
+.live-demo-btn:hover {
+    background-color: #fff;
+    color: #007bff;
+    border-color: #007bff;
+    transform: translateY(-2px); /* Slightly smaller hover lift */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Adjusted shadow on hover */
+}
+
+.contact-section {
+    padding: 3rem 1.5rem;
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+}
+
+.contact-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Wrap items if they don't fit on one line */
+    justify-content: space-between; /* Ensure even spacing */
+}
+
+.contact-details, .contact-form {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 255, 127, 0.6);
+    flex: 1; /* Each element takes equal space */
+    min-width: 300px; /* Prevents them from shrinking too much */
+    box-sizing: border-box;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 70px;
+}
+
+.contact-details h2, .contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ECDFCC;
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.contact-details a{
+    color: #00ff01;
+}
+
+.map-container {
+    margin-top: 1rem;
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ECDFCC;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #fff;
+    color: #007bff;
+    border-color: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.social-media {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    color: #ECDFCC;
+    margin-bottom: 1rem;
+}
+
+.social-link {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #ECDFCC;
+    text-decoration: none;
+    margin-right: 1rem; /* Space between links */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ECDFCC;
+    text-decoration: underline;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* 768px Media Queries*/
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000; /* Black background */
+        position: absolute;
+        top: 100px;
+        left: 0;
+        padding: 1rem;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        z-index: 1000;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem; /* Reduce padding for mobile */
+        margin-bottom: 1.5rem; /* Adjust margin */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Smaller heading for mobile */
+        margin-bottom: 0.7rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller paragraph text */
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem; /* Adjust button padding */
+        font-size: 0.9rem; /* Smaller button text */
+    }
+
+    .typewriter-container {
+        font-size: 1.5rem; /* Adjust text size for smaller screens */
+        max-width: 100%; /* Ensure the container takes the full width available */
+        white-space: normal; /* Allow text to break into multiple lines */
+        word-wrap: break-word; /* Break words when necessary */
+    }
+
+    .typewriter-text {
+        font-size: 1.5rem; /* Adjust text size for smaller screens */
+        width: 100%; /* Set width to 100% for wrapping */
+        white-space: normal; /* Allow text to break into multiple lines */
+        word-wrap: break-word; /* Break words when necessary */
+        overflow: visible; /* Allow overflow to show wrapped text */
+    }
+
+    .profile {
+        flex-direction: column; /* Stack photo and info vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-info {
+        max-width: 100%;
+        padding: 1rem 0; /* Add some padding for breathing room */
+    }
+
+    .profile-info h2 {
+        font-size: 1.75rem;
+    }
+
+    .profile-info p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+        /* About Section Adjustments */
+    .about-container {
+        flex-direction: column; /* Stack profile photo and info vertically */
+        text-align: center; /* Center text for better readability */
+    }
+
+    .about-profile-photo img {
+        width: 150px; /* Smaller profile image */
+        height: 150px;
+    }
+
+    .about-profile-info {
+        font-size: 18px; /* Slightly smaller text size */
+        padding: 0 2rem; /* Add some padding around the text */
+    }
+
+     /* Experience and Education Section Adjustments */
+     .timeline-container {
+        flex-direction: column; /* Stack timelines vertically */
+        gap: 1rem; /* Reduce gap between timelines */
+    }
+
+    .education-timeline, .experience-timeline {
+        padding: 0 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .education-timeline h2, .experience-timeline h2 {
+        font-size: 1.8rem; /* Slightly smaller heading size */
+        padding-bottom: 0.3rem; /* Reduce padding under the heading */
+    }
+
+    .timeline-item h3, .exp-timeline-item h3 {
+        font-size: 1.3rem; /* Slightly smaller title size */
+    }
+
+    .timeline-item p, .exp-timeline-item p {
+        font-size: 0.9rem; /* Slightly smaller paragraph size */
+    }
+
+    .timeline-item p:last-of-type, .exp-timeline-item p:last-of-type {
+        font-size: 1rem; /* Reduce size of emphasized text */
+    }
+
+    /* Certification Section Adjustments */
+    .certification-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column size */
+    }
+
+    .certification-item {
+        padding: 1rem; /* Reduce padding for smaller screens */
+        max-width: 250px; /* Adjust max width */
+    }
+
+    .certification-item h3 {
+        font-size: 1.3rem; /* Slightly smaller title size */
+    }
+
+    .certification-item p {
+        font-size: 0.9rem; /* Slightly smaller paragraph size */
+    }
+
+    /* Projects Section */
+    .projects-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1.5px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid layout */
+        gap: 1.5rem; /* Reduce gap between items */
+    }
+
+    .project-item {
+        padding: 1rem;
+        max-width: 100%; /* Make sure items take full width on smaller screens */
+    }
+
+    .project-header {
+        flex-direction: column; /* Stack image and tech stack vertically */
+        align-items: center;
+    }
+
+    .project-image img, .project-image video {
+        max-width: 151%;
+        max-height: 313px/* Reduce image/video size */
+    }
+
+    .tech-stack {
+        text-align: left;
+        margin-top: 1rem; /* Add spacing between stacked elements */
+        font-size: 18px;
+    }
+
+    .project-description h3 {
+        text-align: left;
+    }
+
+    .project-description span {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+
+    .project-description p {
+        font-size: 1rem; 
+        text-align: left;
+    }
+
+    .project-links {
+        justify-content: left; /* Center buttons */
+        gap: 0.5rem; /* Adjust gap between buttons */
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem; /* Adjust padding for smaller screens */
+        font-size: 0.8rem; /* Adjust font size */
+        min-width: 80px; /* Adjust minimum width */
+    }
+
+    .contact-section {
+        padding: 2rem 2.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack contact details and form vertically */
+        gap: 1.5rem; /* Reduce gap between elements */
+    }
+
+    .contact-details, .contact-form {
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+        min-width: 100px; /* Make each section take up full width */
+    }
+
+    .contact-header {
+        flex-direction: row; /* Stack icon and text vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 0.5rem; /* Reduce gap between icon and header text */
+    }
+
+    .contact-icon {
+        width: 50px; /* Adjust icon size */
+        height: 60px;
+    }
+
+    .contact-details h2, .contact-form h2 {
+        font-size: 1.8rem; /* Slightly reduce heading size */
+        margin-bottom: 0.8rem;
+    }
+
+    .contact-details p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    .map-container {
+        margin-top: 0.5rem; /* Reduce margin for smaller screens */
+    }
+
+    input, textarea {
+        padding: 0.6rem; /* Reduce padding inside input and textarea */
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .submit-btn {
+        padding: 0.4rem 0.8rem; /* Adjust padding for button */
+        font-size: 0.85rem; /* Slightly reduce font size */
+        margin-top: 0.8rem; /* Reduce margin at the top */
+    }
+
+}
+
+/*Media Queries 1024*/
+@media(max-width: 1024px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        order: 2;
+    }
+
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-info {
+        max-width: 100%;
+        text-align: justify;
+    }
+
+    .skill {
+        width: calc(50% - 2rem);
+    }
+    typewriter-container {
+        font-size: 1.7rem; /* Adjust text size for tablets */
+        white-space: normal; /* Allow text to break into multiple lines */
+        max-width: 100%; /* Ensure the container takes the full width available */
+        word-wrap: break-word; /* Break words when necessary */
+    }
+
+    .typewriter-text {
+        font-size: 1.7rem; /* Adjust text size for tablets */
+        width: 100%; /* Set width to 100% for wrapping */
+        white-space: normal; /* Allow text to break into multiple lines */
+        word-wrap: break-word; /* Break words when necessary */
+        overflow: visible; /* Allow overflow to show wrapped text */
+    }
+
+    @keyframes typewriter {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        from, to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: #FFFFFF;
+        }
+    }
+}
+
+
+/* Media Queries for phones (480px and below) */
+@media (max-width: 480px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    header{
+        padding: 0.5rem 0.5rem;
+    }
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .logo {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .logo h1{
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000; /* Black background */
+        position: absolute;
+        top: 60px; /* Adjusted to fit within the screen */
+        left: 0;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1000;
+    }
+
+    .hero {
+        padding: .4rem .5rem; /* Reduced padding for small screens */
+        margin-bottom: 1rem; /* Adjusted margin */
+    }
+
+    .hero-content h1 {
+        font-size: 1.2rem; /* Smaller heading for phones */
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.7rem; /* Smaller paragraph text */
+    }
+
+    .cta-button {
+        padding: 0.5rem 1rem; /* Adjusted button padding */
+        font-size: 0.8rem; /* Smaller button text */
+    }
+
+    .typewriter-container {
+        font-size: 1.2rem; /* Smaller text size for phones */
+        max-width: 100%; /* Full width available */
+        white-space: normal; /* Allow text to break into multiple lines */
+        word-wrap: break-word; /* Break words when necessary */
+    }
+
+    .typewriter-text {
+        font-size: 1.2rem; 
+        width: 100%; 
+        white-space: normal; 
+        word-wrap: break-word; 
+        overflow: visible; 
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info h2 {
+        font-size: 2rem;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .skills-container {
+        flex-direction: column; /* Stack items vertically */
+        gap: 1rem; /* Adjust gap for better spacing */
+    }
+
+    .skill {
+        width: calc(100% - 0.5rem); /* Full width with padding */
+        margin: 0 auto; /* Center align items */
+        padding: 0.8rem; /* Adjust padding for smaller screens */
+    }
+
+    .skill h3 {
+        font-size: 1.25rem; /* Smaller font size for headings */
+    }
+
+    .skill li {
+        font-size: 1rem; /* Smaller font size for list items */
+    }
+
+    .skill-logo {
+        width: 16px; /* Smaller logo size */
+    }
+
+    .about-section {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-profile-info {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .social-links a {
+        flex: 1 1 calc(25% - 0.5rem); /* Adjust width to ensure 4 links per row */
+        text-align: center;
+        margin: 0.2rem 0;
+    }
+
+    .experience-education-section {
+        padding: 2rem 1rem; /* Reduce padding to fit content on smaller screens */
+    }
+
+    .timeline-container {
+        flex-direction: column; /* Stack timelines vertically */
+        gap: 1rem; /* Reduce gap between timelines */
+    }
+
+    .education-timeline, .experience-timeline {
+        min-width: 100%; /* Make each section take up full width */
+        padding: 0 1rem; /* Reduce padding for smaller screens */
+        margin-bottom: 2rem; /* Add space below each timeline */
+    }
+
+    .education-timeline h2, .experience-timeline h2 {
+        font-size: 1.8rem; /* Adjust font size for headings */
+        margin-bottom: 1rem; /* Maintain space below headings */
+    }
+
+    .timeline-item h3, .exp-timeline-item h3 {
+        font-size: 1.3rem; /* Reduce font size for item titles */
+    }
+
+    .timeline-item p, .exp-timeline-item p {
+        font-size: 0.9rem; /* Adjust font size for paragraphs */
+    }
+
+    .timeline-item p:last-of-type, .exp-timeline-item p:last-of-type,
+    .exp-timeline-item p.exp-dates {
+        font-size: 1rem; /* Slightly smaller font size for dates */
+        padding: 0.15rem 0.4rem; /* Adjust padding for smaller screens */
+        letter-spacing: 0.3px; /* Slightly reduce letter spacing */
+    }
+
+    .exp-timeline-item p.exp-company {
+        font-size: 1rem; /* Adjust font size for company names */
+    }
+
+    .exp-timeline-item p.exp-description {
+        font-size: 0.9rem; /* Reduce font size for job descriptions */
+    }
+
+    .certification-section {
+        padding: 2rem 1.5rem; /* Add padding to leave space on both sides */
+    }
+
+    .certification-section h2 {
+        font-size: 2rem; /* Adjust font size for heading */
+        margin-bottom: 1.5rem; /* Reduce margin for better spacing */
+    }
+
+    .certification-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid layout to fit smaller screens */
+        gap: 0.5rem; /* Reduce gap between items */
+    }
+
+    .certification-item {
+        padding: 1rem; /* Reduce padding for items */
+         /* Ensure items take up full width on smaller screens */
+    }
+
+    .certification-item h3 {
+        font-size: 1.3rem; /* Adjust font size for item titles */
+        margin: 0.3rem 0; /* Reduce margin */
+    }
+
+    .certification-item p {
+        font-size: 0.9rem; /* Adjust font size for descriptions */
+        margin: 0.1rem 0; /* Reduce margin for better spacing */
+    }
+
+    .certification-item img {
+        margin-bottom: 0.8rem; /* Reduce space below images */
+    }
+
+    .projects-section {
+        padding: 2rem 1rem; /* Adjust padding for smaller screens */
+        text-align: center;
+    }
+
+    .projects-section h2 {
+        font-size: 2rem; /* Smaller font size for the heading */
+        margin-bottom: 1.5rem; /* Reduced margin */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .project-item {
+        padding: 1rem; /* Adjust padding for smaller items */
+        box-shadow: 0 2px 10px rgba(0, 255, 127, 0.6); /* Reduced shadow for smaller items */
+    }
+
+    .project-header {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+        align-items: center;
+        gap: 1rem; /* Space between image and tech stack */
+        justify-content: center; /* Center align content */
+    }
+
+
+    .project-image img,
+    .project-image video {
+        max-height: 200px; /* Reduce maximum height for images and videos */
+    }
+
+
+    .tech-stack {
+        font-size: 17px;
+        text-align: left;
+    }
+
+    .project-description span {
+        font-size: 1.2rem; /* Adjust font size for span elements */
+    }
+
+    .project-description p {
+        font-size: 1rem; /* Smaller font size for description text */
+    }
+
+    .project-links {
+        display: flex;
+        justify-content: baseline;
+        align-items: center; /* Center align buttons */
+        gap: 1rem; /* Space between buttons */
+    }
+
+    .btn {
+        padding: 0.5rem 0.8rem; /* Adjust padding for buttons */
+        font-size: 0.9rem; /* Slightly smaller font size */
+        min-width: 80px; /* Smaller minimum width for buttons */
+    }
+}
+
